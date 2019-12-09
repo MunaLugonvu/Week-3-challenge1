@@ -1,32 +1,37 @@
 
-   var arr1 = ['m','f','1','2','3','4','h','6','8'];
-var arr2 =['evens', 'odds','chars']
-    var obj = {}
-   var  vCount = 0
 
-    arr1.forEach(function(value, index) {
-        for(var x = 0; x < arr1.length ; x++)
-        {
-          if ((arr1[x])%2 == 0)
-          {
-              obj['evens'] = arr1[x];
-            vCount += 1;
-      
-          }
-          else if (arr1[x]%2 ==1){
-                obj['odds'] = arr1[x]
-                vCount += 1;
-          }
-          else {
-              obj['chars'] = arr1[x]
-             
-          }
-        }
-          
-      
-      
-      });
-      
-      console.log(obj);
-      
-      
+
+function sortArray(arr1){
+
+ // var vCount = 0;
+var evens = [];
+var odds = [];
+var chars = [];
+
+
+for (const element of arr1) {
+  for (var x = 0; x < arr1.length; x++) {
+    if (typeof arr1[x] === "number"){
+    if ((arr1[x]) % 2 == 0) {
+      evens.push(parseInt(arr1[x]));
+      //return {evens: evens.sort()}
+
+    }
+    else {
+       
+      odds.push(parseInt(arr1[x]) );
+    
+      //return {odds:odds.sort()}
+    }
+  }
+    else {
+      chars.push(arr1[x])
+      //return { chars:chars.sort()}
+    }
+    return {'evens': evens.sort((a,b)=>a-b),'odds': odds.sort((a,b)=>a-b), 'chars': chars.sort((a,b)=>a-b)}
+  }
+
+};}
+console.log(sortArray(['a','b',5,3,9,'i',7]))
+
+
