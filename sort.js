@@ -1,9 +1,5 @@
 
 
-
-
-
-// var vCount = 0;
 var evens = {};
 var odds = {};
 var chars = {};
@@ -13,7 +9,7 @@ function sortArray(arr1) {
     if (typeof (el) == "number") {
       if (el % 2 == 0) {
         sortedObj.evens.push(el);
-        //return {evens: evens.sort()}
+       
       } else {
 
         sortedObj.odds.push(el);
