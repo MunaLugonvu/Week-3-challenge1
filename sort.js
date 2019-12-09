@@ -1,8 +1,8 @@
 
 
-var evens = {};
-var odds = {};
-var chars = {};
+var evens = [];
+var odds = [];
+var chars = [];
 let sortedObj = { 'evens': [], 'odds': [], 'chars': [] };
 function sortArray(arr1) {
   for (const el of arr1) {
