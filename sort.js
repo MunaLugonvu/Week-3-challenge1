@@ -1,30 +1,32 @@
 
 
-var evens = [];
-var odds = [];
-var chars = [];
-let sortedObj = { 'evens': [], 'odds':[], 'chars':[] };
+
 function sortArray(arr1) {
+  let evens = [];
+  let odds = [];
+  let chars = [];
+  // let sortedObj = { 'evens': [], 'odds': [], 'chars': [] };
+
   for (const el of arr1) {
     if (typeof (el) == "number") {
       if (el % 2 == 0) {
-        sortedObj.evens.sort((a,b) => a - b).push(el);
+        evens.push(el);
 
       } else {
 
-        sortedObj.odds.sort((a,b) => a - b).push(el);
+        odds.push(el);
       }
 
     } else if (typeof (el) == "string") {
-      sortedObj.chars.sort().push(el)
+      chars.push(el)
 
 
     }
-
   };
-  return sortedObj
+  return { 'evens': evens.sort((a,b) => a-b), 'odds': odds.sort(), 'chars': chars.sort() }
 }
-console.log(sortArray(['a', 'g', 5, 3,'d', 9, 'b', 7, 8, 14, 12,4,2,17,1]))
+
+console.log(sortArray(['a', 'g', 5, 3, 'd', 9, 'b', 7, 8, 14, 12, 4, 2, 17, 1]))
 
 
 
