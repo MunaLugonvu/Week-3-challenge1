@@ -8,7 +8,7 @@ this.bal= bal;
 this.AccountName = AccountName;
     }
 
-    CheckBalance(){
+    checkBalance(){
         //your code here
         if(this.state == "Opened"){
     console.log("Your balance is " +this.bal );
@@ -18,11 +18,12 @@ this.AccountName = AccountName;
 
     }
 
-    openAccouunt(){
+    openAccount(){
         //your code here
         if(this.state == null){
             this.state = "Opened";
             console.log("Your Account is now open!");
+            return "Account Opened"
         } else {
             return "Account already exists";
         }
@@ -44,7 +45,7 @@ this.AccountName = AccountName;
        }
     }
     
-    Withdraw(withdrawAmount){
+    withdraw(withdrawAmount){
         //Your Code here
         if(this.state == "Opened"){
             if(this.bal<withdrawAmount){
@@ -70,4 +71,4 @@ this.AccountName = AccountName;
 }
 
  module.exports = new BankAccount(null,500000,'muna');
-//console.log(new BankAccount(null,500000,'muna'))
+
